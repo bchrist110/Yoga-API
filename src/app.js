@@ -37,6 +37,7 @@ app.use(function errorHandler(error, req, res, next) {
         console.error(error)
         response = { message: error.message, error }
     }
+    console.log("here " + error)
     res.status(500).json(response)
 })
 
