@@ -4,7 +4,7 @@ CREATE TABLE standing (
     img1 TEXT NOT NULL,
     img2 TEXT NOT NULL,
     img3 TEXT NOT NULL,
-    notes TEXT NOT NULL,
+    notes TEXT NOT NULL
 );
 
 CREATE TABLE sitting (
@@ -13,5 +13,5 @@ CREATE TABLE sitting (
     img1 TEXT NOT NULL,
     img2 TEXT NOT NULL,
     img3 TEXT NOT NULL,
-    notes TEXT NOT NULL,
+    notes TEXT NOT NULL
 );
