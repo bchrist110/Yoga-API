@@ -1,3 +1,5 @@
 DROP TABLE IF EXISTS standing;
 
 DROP TABLE IF EXISTS sitting;
+
+DROP TABLE IF EXISTS lastfive;
