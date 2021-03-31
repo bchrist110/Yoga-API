@@ -6,6 +6,7 @@ const helmet = require('helmet')
 const { NODE_ENV } = require('./config')
 const sittingRouter = require('./sittingRouter')
 const standingRouter = require('./standingRouter')
+const lastRouter = require('./lastRouter')
 
 const app = express()
 
@@ -19,6 +20,7 @@ app.use(cors())
 
 app.use('/api/sitting', sittingRouter)
 app.use('/api/standing', standingRouter)
+app.use('/api/lastfive', lastRouter)
 
 app.get('/', (req, res) => {
     res.send('Hello, world!')
