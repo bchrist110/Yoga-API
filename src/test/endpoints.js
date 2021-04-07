@@ -71,6 +71,24 @@ describe('App Endpoints', function() {
             "notes": "Staff pose is often called the seated equivalent of mountain pose. Just as mountain sets up the alignment for many standing poses, staff pose is the starting point for many seated poses."
         }
     ]
+
+    const testlast = [
+        {
+            "id": 1,
+            "ordersitting": "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15",
+            "orderstanding": "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15"
+        },
+        {
+            "id": 2,
+            "ordersitting": "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15",
+            "orderstanding": "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15"
+        },
+        {
+            "id": 3,
+            "ordersitting": "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15",
+            "orderstanding": "1 2 3 4 5 6 7 8 9 10 11 12 13 14 15"
+        },
+    ]
     
     beforeEach('insert standing', () => {
        return db
@@ -82,16 +100,39 @@ describe('App Endpoints', function() {
          .into('sitting')
          .insert(testSitting)
     })
+    beforeEach('insert last', () => {
+        return db
+         .into('lastfive')
+         .insert(testlast)
+    })
 
-    it('GET /leagues responds with 200 and all of the standing poses', () => {
+    it('GET /standing responds with 200 and all of the standing poses', () => {
         return supertest(app)
             .get('/standing')
             .expect(200, testStanding)
         })
-    it('GET /teams responds with 200 and all of the sitting poses', () => {
+    it('GET /sitting responds with 200 and all of the sitting poses', () => {
         return supertest(app)
             .get('/sitting')
             .expect(200, testSitting)
+        })
+    
+    it('GET /lastfive responds with 200 and all of the sitting poses', () => {
+        return supertest(app)
+            .get('/lastfive')
+            .expect(200, testlast)
+        })
+
+        describe.only(`POST /lastfive`, () => {
+            it(`posts new orders, responding with 201 and the new orders`,  function() {
+                return supertest(app)
+                   .post('/lastfive')
+                   .send({
+                    "ordersitting": "15 14 13 12 11 10 9 8 7 6 5 4 3 2 1",
+                    "orderstanding": "15 14 13 12 11 10 9 8 7 6 5 4 3 2 1"
+                   })
+                   .expect(201)
+            })
         })
     
     afterEach('cleanup', () => db('yoga').truncate())
