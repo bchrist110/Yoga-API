@@ -43,6 +43,7 @@ Sample Call:
 ```
           
 ### Sitting
+```
 Url : /api/sitting
 Methods: GET
 Success Response for GET:
@@ -60,7 +61,9 @@ Sample Call:
               console.log(r);
             }
           });
+```
 ### Standing
+```
 Url : /api/standing
 Methods: GET
 Success Response for GET:
@@ -78,7 +81,7 @@ Sample Call:
               console.log(r);
             }
           });
-
+```
 ![Screenshot (27)](https://user-images.githubusercontent.com/70658734/113909850-041b1a00-978d-11eb-86a9-1f8f6d97957c.png)
 
 ### Summary
