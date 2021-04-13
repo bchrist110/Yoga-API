@@ -1,26 +1,23 @@
-# Express Boilerplate!
+# Yoga Roulette
 
-This is a boilerplate project used for starting new projects!
+Website: https://yogaroulette-lbqyzi88y-bchrist110.vercel.app/
 
-## Set up
+## Api
 
-Complete the following steps to start a new project (NEW-PROJECT-NAME):
+Uses 3 Get Requests and One Post Request to Save Liked Practices to Database
 
-1. Clone this repository to your local machine `git clone BOILERPLATE-URL NEW-PROJECTS-NAME`
-2. `cd` into the cloned repository
-3. Make a fresh start of the git history for this project with `rm -rf .git && git init`
-4. Install the node dependencies `npm install`
-5. Move the example Environment file to `.env` that will be ignored by git and read by the express server `mv example.env .env`
-6. Edit the contents of the `package.json` to use NEW-PROJECT-NAME instead of `"name": "express-boilerplate",`
+![Screenshot (27)](https://user-images.githubusercontent.com/70658734/113909850-041b1a00-978d-11eb-86a9-1f8f6d97957c.png)
 
-## Scripts
+### Summary
 
-Start the application `npm start`
+-Yoga Roulette is a random yoga practice generator. You can either select a random practice or a recently liked practice. The practice can either be 10, 20, or 30 minutes. The practice will be half standing poses and half sitting poses.
 
-Start nodemon for the application `npm run dev`
+### Technologies Used
 
-Run the tests `npm test`
-
-## Deploying
-
-When your new project is ready for deployment, add a new Heroku application with `heroku create`. This will make a new git remote called "heroku" and you can then `npm run deploy` which will push to this remote's main branch.
+-React.js
+-Javascript
+-Node.js
+-PostgreSQL
+-HTML5
+-CSS3
+-Express
