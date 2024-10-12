@@ -11,7 +11,8 @@
     "migrate:production": "heroku run PGSSLMODE=no-verify npm run migrate",
     "start": "node src/server.js",
     "predeploy": "npm run migrate:production",
-    "deploy": "git push heroku main"
+    "deploy": "vercel",
+    "deploy:production": "vercel --prod"
   },
   "keywords": [],
   "engines": {
