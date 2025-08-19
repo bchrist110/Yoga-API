@@ -1,6 +1,62 @@
-# Yoga Roulette
+# Yoga Roulette API
+
+A REST API for the Yoga Roulette application that provides yoga pose sequences and practice generation.
 
 Website: https://yogaroulette-bchrist110.vercel.app/
+
+## Deployment
+
+### Render Deployment
+
+This API is configured for deployment on Render.com.
+
+#### Method 1: Using render.yaml (Recommended)
+1. Fork this repository
+2. Connect your GitHub account to Render
+3. Create a new "Blueprint" service in Render
+4. Connect your forked repository
+5. Render will automatically detect the `render.yaml` file and set up both the web service and PostgreSQL database
+
+#### Method 2: Manual Setup
+1. Create a new PostgreSQL database on Render
+2. Create a new Web Service on Render
+3. Connect your GitHub repository
+4. Set the following environment variables:
+   - `NODE_ENV`: `production`
+   - `DATABASE_URL`: (provided by your Render PostgreSQL database)
+5. Set build command: `npm install`
+6. Set start command: `npm start`
+
+### Environment Variables
+
+Copy `.env.example` to `.env` for local development:
+```bash
+cp .env.example .env
+```
+
+Required environment variables:
+- `NODE_ENV`: Environment (development/production)
+- `PORT`: Server port (default: 8000)
+- `DATABASE_URL`: PostgreSQL connection string
+
+### Local Development
+
+1. Install dependencies:
+```bash
+npm install
+```
+
+2. Set up your environment variables in `.env`
+
+3. Run database migrations:
+```bash
+npm run migrate
+```
+
+4. Start the development server:
+```bash
+npm run dev
+```
 
 ## Api Documentation
 ### Last

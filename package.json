@@ -1,5 +1,5 @@
 {
-  "name": "YogaAPI",
+  "name": "yoga-api",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,8 +8,9 @@
     "dev": "nodemon src/server.js",
     "migrate": "postgrator --config postgrator-config.js",
     "migrate:test": "env NODE_ENV=test npm run migrate",
-    "migrate:production": "heroku run PGSSLMODE=no-verify npm run migrate",
+    "migrate:production": "npm run migrate",
     "start": "node src/server.js",
+    "build": "npm run migrate:production",
     "predeploy": "npm run migrate:production",
     "deploy": "vercel",
     "deploy:production": "vercel --prod"
